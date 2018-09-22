@@ -21,7 +21,7 @@ class Initalization extends Migration
       $table->string('phone_commercial_contact');
       $table->string('email_commercial_contact');
       $table->string('address_office');
-      $table->integer('comuna_id')->unique();
+      $table->integer('comuna_id');
       $table->boolean('status')->default(false);
       $table->timestamps();
     });
@@ -32,7 +32,7 @@ class Initalization extends Migration
       $table->decimal('price', 10, 2);
       $table->text('description');
       $table->enum('choices', array('service', 'article', 'material'));
-      $table->string('barcode')->unique();
+      $table->string('barcode');
       $table->integer('measured_unit_id');
       $table->integer('category_id');
       $table->boolean('status')->default(false);
@@ -113,7 +113,19 @@ class Initalization extends Migration
       [
         'name' => 'Constructura Altura S.A.', 'last_name' => 'Constructora Altura', 'email' => 'correo@altura.cl', 'rut' => '1-9',
         'company' => 'Altura Construcciones', 'giro' => 'Constructora', 'phone' => '12121212', 'website' => 'www.altura.cl', 'commercial_contact' => 'Nombre Agente Comercial', 'phone_commercial_contact' => '2322323', 'email_commercial_contact' => 'comercial@altura.cl', 'address_office' => 'Av. Los Calamares 107', 'comuna_id' => 108
-      ]
+      ],
+      [
+        'name' => 'Transportes LOLA S.A.', 'last_name' => 'Transportes LOLA', 'email' => 'correo@lola.cl', 'rut' => '1-3',
+        'company' => 'Transportes LOLA', 'giro' => 'Transportes', 'phone' => '12133212', 'website' => 'www.transportes.cl', 'commercial_contact' => 'Nombre Agente Comercial', 'phone_commercial_contact' => '2322323', 'email_commercial_contact' => 'comercial@lola.cl', 'address_office' => 'Av. Los Condores 107', 'comuna_id' => 108
+      ],
+      [
+        'name' => 'Universidad Clara', 'last_name' => 'Universidad Clara', 'email' => 'correo@universidad.cl', 'rut' => '1-1',
+        'company' => 'Universidad Clara', 'giro' => 'Educación Superior', 'phone' => '1215512', 'website' => 'www.universidad.cl', 'commercial_contact' => 'Nombre Agente Comercial', 'phone_commercial_contact' => '2344423', 'email_commercial_contact' => 'comercial@universidad.cl', 'address_office' => 'Los Carrera 20', 'comuna_id' => 108
+      ],
+      [
+        'name' => 'Banco PATO', 'last_name' => 'Banco PATO', 'email' => 'correo @banco . cl', 'rut' => '5 - 3',
+        'company' => 'Banco El Pato Rojo', 'giro' => 'Banca', 'phone' => '1255512', 'website' => 'www . banco . cl', 'commercial_contact' => 'Nombre Agente Comercial', 'phone_commercial_contact' => '2377423', 'email_commercial_contact' => 'comercial @banco . cl', 'address_office' => 'Errazuriz 458', 'comuna_id' => 108
+      ],
 
     ]);
 
@@ -126,17 +138,17 @@ class Initalization extends Migration
         'name' => 'ABRAZADERA INOX 32 MM', 'price' => 4500, 'description' => 'ABRAZADERA INOX 32 MM', 'choices' => 'article', 'barcode' => '780231450', 'measured_unit_id' => 1, 'category_id' => 1
       ],
       [
-        'name' => 'ABRAZADERA INOX DN 40	', 'price' => 4580, 'description' => 'ABRAZADERA INOX DN 40', 'choices' => 'article', 'barcode' => '781131450', 'measured_unit_id' => 1, 'category_id' => 1
+        'name' => 'ABRAZADERA INOX DN 40', 'price' => 4580, 'description' => 'ABRAZADERA INOX DN 40', 'choices' => 'article', 'barcode' => '781131450', 'measured_unit_id' => 1, 'category_id' => 1
       ],
       [
-        'name' => 'ACIDO GEL DECAPANTE 2 LT. THYTAN TS K 2000', 'price' => 43000, 'description' => 'ACIDO GEL DECAPANTE 2 LT. THYTAN TS K 2000', 'choices' => 'article', 'barcode' => '781551450', 'measured_unit_id' => 1, 'category_id' => 1
+        'name' => 'ACIDO GEL DECAPANTE 2 LT . THYTAN TS K 2000', 'price' => 43000, 'description' => 'ACIDO GEL DECAPANTE 2 LT . THYTAN TS K 2000', 'choices' => 'article', 'barcode' => '781551450', 'measured_unit_id' => 1, 'category_id' => 1
       ],
       [
-        'name' => 'SERVICIO DE PERFORACIONES PARA GALVANIZADO ', 'price ' => 43000, 'description ' => 'SERVICIO DE PERFORACIONES PARA GALVANIZADO ', 'choices ' => 'service', 'barcode ' => '7815111450 ', 'measured_unit_id ' => 1, 'category_id ' => 1
+        'name' => 'SERVICIO DE PERFORACIONES PARA GALVANIZADO', 'price' => 443000, 'description' => 'SERVICIO DE PERFORACIONES PARA GALVANIZADO', 'choices' => 'service', 'barcode' => '7815111450', 'measured_unit_id' => 1, 'category_id' => 1
       ],
       [
-        'name' => 'SERVICIO DE TRASLADO AEROPUERTO', 'price ' => 17000, 'description ' => 'SERVICIO DE TRASLADO AEROPUERTO', 'choices ' => 'service ', 'barcode ' => '7811111450', 'measured_unit_id ' => 1, 'category_id ' => 1
-      ]
+        'name' => 'SERVICIO DE TRASLADO AEROPUERTO', 'price' => 54000, 'description' => 'SERVICIO DE TRASLADO AEROPUERTO', 'choices' => 'service', 'barcode' => '12345', 'measured_unit_id' => 1, 'category_id' => 1
+      ],
 
     ]);
 
@@ -494,7 +506,7 @@ class Initalization extends Migration
       ['name' => 'Chile Chico', 'provincia_id' => '50'],
       ['name' => 'Río Ibáñez', 'provincia_id' => '50'],
       ['name' => 'Cochrane', 'provincia_id' => '51'],
-      ['name' => 'O\'Higgins', 'provincia_id' => '51'],
+      ['name' => 'O \'Higgins', 'provincia_id' => '51'],
       ['name' => 'Tortel', 'provincia_id' => '51'],
       ['name' => 'Natales', 'provincia_id' => '52'],
       ['name' => 'San Gregorio', 'provincia_id' => '52'],
@@ -519,18 +531,13 @@ class Initalization extends Migration
       ['name' => 'sdfggds', 'provincia_id' => '21'],
       ['name' => 'fadsdfas', 'provincia_id' => '1'],
       ['name' => 'gsfggf', 'provincia_id' => '6'],
-      ['name' => 'Osorno', 'provincia_id' => '1']
+      ['name' => 'Osorno', 'provincia_id' => '1'],
 
     ]);
   }
 
   public function down()
   {
-    Schema::drop('clients');
-    Schema::drop('products');
-    Schema::drop('sales_invoices');
-    Schema::drop('detail_sales_invoice');
-    Schema::drop('comuna');
 
   }
 }
