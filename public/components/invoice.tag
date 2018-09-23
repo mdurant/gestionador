@@ -5,10 +5,10 @@
                 <input id="client" class="form-control typeahead" type="text" placeholder="Cliente" />
             </div>
             <div class="col-xs-2">
-                <input class="form-control" type="text" placeholder="Ruc" readonly value="{ruc}" />
+                <input class="form-control" type="text" placeholder="rut" readonly value="{rut}" />
             </div>
             <div class="col-xs-4">
-                <input class="form-control" type="text" placeholder="Dirección" readonly value="{address}" />
+                <input class="form-control" type="text" placeholder="Dirección" readonly value="{address_office}" />
             </div>
         </div>
     </div>
@@ -140,7 +140,7 @@
             });
 
             self.total = total;
-            self.subTotal = parseFloat(total / 1.18);
+            self.subTotal = parseFloat(total / 1.19);
             self.iva = parseFloat(total - self.subTotal);
         }
 
@@ -155,8 +155,8 @@
                     onClickEvent: function() {
                         var e = client.getSelectedItemData();
                         self.client_id = e.id;
-                        self.ruc = e.ruc;
-                        self.address = e.address;
+                        self.rut = e.rut;
+                        self.address_office = e.address_office;
 
                         self.update();
                     }
